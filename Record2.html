@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiRecord - Persetujuan Calon Nasabah</title>
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="Style/record.css" />
+
+    <!-- Wavesurfer.js library -->
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+
+    <!-- Wavesurfer.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/wavesurfer.js/dist/wavesurfer.min.css"
+    />
+  </head>
+  <body>
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+      <!-- START LOGO -->
+      <header>
+        <img src="Assets/manulife-logo.svg" alt="" />
+        <div class="line-logo"></div>
+        <p>Persetujuan Calon Nasabah</p>
+      </header>
+      <!-- END LOGO -->
+
+      <!-- START CONTAINER -->
+      <div class="container">
+        <!-- START ASIDE -->
+        <aside>
+          <div class="menu-indikator">
+            <div class="menu">
+              <div class="text-menu">
+                <p>Dengarkan Produk & Record Persetujuan</p>
+                <p>
+                  Dengarkan Skrip Produk Polis dan Record Persetujaun Pembelian
+                  Produk
+                </p>
+              </div>
+            </div>
+            <div class="menu">
+              <div class="text-menu">
+                <p>Dengarkan Produk & Record Persetujuan</p>
+                <p>
+                  Dengarkan Skrip Produk Polis dan Record Persetujaun Pembelian
+                  Produk
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="indikator">
+            <div class="img-indikator">
+              <img src="Assets/button-indikator.svg" alt="" />
+            </div>
+            <div class="img-indikator">
+              <img src="Assets/button-indikator-empty.svg" alt="" />
+            </div>
+          </div>
+          <div class="line-indikator"></div>
+        </aside>
+        <!-- END ASIDE -->
+        <!--  START ARTICLE -->
+        <article>
+          <div class="article-side">
+            <p>perdengarkan skrip pembelian produk</p>
+            <p>
+              Rekaman persetujuan dari <span>Pemegang Polis</span> merupakan
+              pernyataan ketentuan yang berlaku terkail penjualan. Produk
+              Asuransi uang <span>Investasi.</span>
+            </p>
+            <p>
+              Sisihkan 16 menit di ruangan yang tenang tanpa gangguan untuk
+              mendengarkan skrip tanpa terputus.
+            </p>
+            <button id="dengarkanScript">
+              <img src="Assets/icon-play.svg" alt="" />
+              Dengarkan Script
+            </button>
+          </div>
+          <div class="line-article"></div>
+          <div class="article-side">
+            <p>rekam persetujuan pemegang polis</p>
+            <p>
+              Seteleh mendengarkan skrip pembelian produk. Anda dapat merekam
+              persetujuan 0.30 Detik dan katakan
+              <span>“Ya Saya Mengerti dan Setuju”</span>
+            </p>
+            <p>Silahkan tekan tombol <span>“Mulai Merekam”</span></p>
+            <button id="mulaiRekam">
+              <img src="Assets/icon-record.svg" alt="" />
+              Mulai Merekam
+            </button>
+          </div>
+        </article>
+        <!-- END ARTICLE -->
+      </div>
+      <!-- END CONTAINER -->
+    </div>
+
+    <!-- END WRAPPER -->
+  </body>
+
+  <!-- START POP UP SCRIPT -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <button id="closePopupBtn">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+      <div class="title-popup-record">
+        <h3>Skrip Pembelian Produk budiman akbar</h3>
+        <p>
+          Anda sedang mendengarkanskrip pembelian produk sebgai persyaratan.
+        </p>
+      </div>
+
+      <div class="content-wave-robo">
+        <img src="Assets/RobotGendut.gif" alt="" />
+
+        <div class="wave">
+          <div id="waveform"></div>
+          <div class="btn-wave">
+            <button id="replayBtn">
+              <img src="Assets/icon-replay.svg" alt="" />
+              Replay
+            </button>
+            <button id="playPauseBtn">
+              <img id="imageElement" src="Assets/icon-play-wav.svg" alt="" />
+            </button>
+            <button id="finishBtn" class="tooltip">
+              <img src="Assets/icon-selesai.svg" alt="" />
+              Selesai
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-popup-record">
+        <p>
+          Mohon agar Calon Nasabah meluangkan waktu untuk mendengarkan skrip
+          produk ini dengan seksama sebelum menutup aplikasi. Terima kasih atas
+          perhatian dan kerjasamanya.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- END POP UP SCRIPT -->
+
+  <!-- START POP UP CLOSE -->
+  <div id="popUpClose" class="popUpClose">
+    <div class="popup-close-content">
+      <button id="closePopupBtn">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+
+      <div class="containerPopUpClose">
+        <img src="Assets/icon-tandaTanya.svg" alt="" />
+        <p class="titlePopup">Tutup Aplikasi ?</p>
+        <div class="btnCloseRecord">
+          <button id="btnTidakClose">Tidak</button>
+          <button id="btnYaClose">Ya</button>
+        </div>
+        <p class="footerPopUp">
+          Jika anda tidak mendengarkan skrip hingga selesai, maka anda tidak
+          dapat melanjutkan untuk “Record Pernyataan Nasabah” dan anda harus
+          memulainya lagi dari awal.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- END POP UP CLOSE -->
+
+  <!-- START POP UP REPLAY -->
+  <div id="popUpReplay" class="popUpReplay">
+    <div class="popup-replay-content">
+      <button id="closePopupBtn">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+
+      <div class="containerPopUpReplay">
+        <img src="Assets/icon-tandaTanya.svg" alt="" />
+        <p class="titlePopup">Ulang Skrip ?</p>
+        <p class="DescPopup">
+          Anda yakin akan mengulang “Skrip Pembelian Produk” ?
+        </p>
+        <div class="btnCloseReplay">
+          <button id="btnTidakReplay">Tidak</button>
+          <button id="btnYaReplay">Ya</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END POP UP REPLAY -->
+
+  <!-- START POP UP ULANG RECORD -->
+  <div id="popUpUlangRecord" class="popUpUlangRecord">
+    <div class="popup-ulangrecord-content">
+      <button id="closePopupBtn">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+
+      <div class="containerPopUpUlangRecord">
+        <img src="Assets/icon-tandaTanya.svg" alt="" />
+        <p class="titlePopup">Ulang Record ?</p>
+        <p class="DescPopup">Anda yakin akan mengulang “Record” ?</p>
+        <div class="btnCloseUlangRecord">
+          <button id="btnTidakUlang">Tidak</button>
+          <button id="btnYaUlang">Ya</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END POP UP ULANG RECORD -->
+
+  <!-- START POP UP RECORD -->
+  <div id="popUpRecord" class="popUpRecord">
+    <div class="popUpRecord-content">
+      <button id="closePopupBtnRecord">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+      <div class="title-popup-record">
+        <h3>Rekaman Calon Pemegang Polis budiman akbar</h3>
+        <p>
+          Apabila anda mengerti dan setuju silahkan menjawab “Ya Saya Mengerti
+          dan Setuju”
+        </p>
+      </div>
+
+      <div class="content-wave-robo">
+        <div class="imgRecorder">
+          <div class="textRemaining">
+            <p>Time Remaining</p>
+            <div id="timer">00:30</div>
+          </div>
+        </div>
+        <div class="img-equalizer">
+          <img src="Assets/equalizer.png" alt="" />
+        </div>
+        <div class="transkrip">
+          <p>Hasil Text Record :</p>
+          <p id="transcript"></p>
+        </div>
+
+        <div class="btn-record">
+          <button id="ulangBtn">
+            <img src="Assets/icon-replay.svg" alt="" />
+            <p>Ulang</p>
+          </button>
+          <button id="recordBtn" class="btn">
+            <img
+              id="imageElementRecord"
+              src="Assets/icon-record-nasabah.svg"
+              alt=""
+            />
+          </button>
+          <button id="selesaiBtn" class="btn">
+            <img src="Assets/icon-selesai.svg" alt="" />
+            <p>Selesai</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-popup-record">
+        <p>
+          Waktu yang diberikan hanya waktu 30 Detik. Ucapkan dengan Jelas agar
+          dapat kami konfirmasi
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- START POP UP RECORD -->
+
+  <!-- START POP UP TIME OUT -->
+  <div id="popUpTimeOut" class="popUpTimeOut">
+    <div class="popup-timeout-content">
+      <button id="closePopupBtn">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+
+      <div class="containerPopUpTimeOut">
+        <img src="Assets/icon-timeout.svg" alt="" />
+        <p class="titlePopup">Ulang Skrip ?</p>
+        <p class="DescPopup">
+          Anda yakin akan mengulang “Skrip Pembelian Produk” ?
+        </p>
+        <div class="btnCloseTimeout">
+          <button id="btnYaTimeOut">Ya</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END POP UP TIME OUT -->
+
+  <!-- JAVSCRIPT -->
+  <script src="Script/script.js"></script>
+</html>

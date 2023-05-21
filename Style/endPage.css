@@ -1,0 +1,101 @@
+:root {
+  --PrimaryColor: #00a758;
+  --SecondryColor: #303243;
+  --RedColor: #ff6b6b;
+  --FontColorPrimary: #ffffff;
+  --FontColorSecondry: #9e9f9e;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/Assets/bg-mirecord.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* START WRAPPER */
+.wrapper {
+  width: 89%;
+  height: 87%;
+  padding: 40px 70px;
+}
+
+/* HEADER */
+header {
+  width: 450px;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  width: 120px;
+}
+
+header .line-logo {
+  height: 30px;
+  border: 1px solid var(--FontColorSecondry);
+}
+
+header p {
+  font-size: 22px;
+  color: var(--FontColorSecondry);
+}
+/* END HEADER */
+
+/* START CONTAINER */
+.container {
+  margin-top: 40px;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  flex-direction: row;
+}
+
+.container .greeting {
+  width: 40%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .greeting p:nth-child(1) {
+  font-size: 65px;
+  color: var(--FontColorPrimary);
+  font-weight: bold;
+  text-align: center;
+}
+
+.container .greeting p:nth-child(2) {
+  font-size: 20px;
+  color: var(--FontColorSecondry);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container .greeting button {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--PrimaryColor);
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--FontColorPrimary);
+  border: none;
+  cursor: pointer;
+}
+/* END CONTAINER */
+
+/* END WRAPPER */

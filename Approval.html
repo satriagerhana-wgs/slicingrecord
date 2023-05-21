@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiRecord - Persetujuan Calon Nasabah</title>
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="Style/approval.css" />
+  </head>
+  <body>
+    <!-- START WRAPPER -->
+    <div class="wrapper">
+      <!-- START LOGO -->
+      <header>
+        <img src="Assets/manulife-logo.svg" alt="" />
+        <div class="line-logo"></div>
+        <p>Persetujuan Calon Nasabah</p>
+      </header>
+      <!-- END LOGO -->
+
+      <!-- START CONTAINER -->
+      <div class="container">
+        <!-- START ASIDE -->
+        <aside>
+          <div class="menu-indikator">
+            <div class="menu">
+              <div class="text-menu">
+                <p>Dengarkan Produk & Record Persetujuan</p>
+                <p>
+                  Dengarkan Skrip Produk Polis dan Record Persetujaun Pembelian
+                  Produk
+                </p>
+              </div>
+            </div>
+            <div class="menu">
+              <div class="text-menu">
+                <p>Dengarkan Produk & Record Persetujuan</p>
+                <p>
+                  Dengarkan Skrip Produk Polis dan Record Persetujaun Pembelian
+                  Produk
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="indikator">
+            <div class="img-indikator">
+              <img src="Assets/button-checklist.svg" alt="" />
+            </div>
+            <div class="img-indikator">
+              <img
+                id="elementIndikator"
+                src="Assets/button-checklist.svg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="line-indikator"></div>
+        </aside>
+        <!-- END ASIDE -->
+        <!--  START ARTICLE -->
+        <article>
+          <div class="article-side">
+            <p>Anda Berhasil Merekam Persetujuan Produk Polis</p>
+            <p>
+              <span>Dengarkan kembali</span> rekaman persetujuan pemegang polis.
+              Pastikan suara pemegang polis terdengar jelas.
+            </p>
+
+            <div class="container-audio">
+              <div class="record-audio">
+                <div class="audio">
+                  <audio id="myAudio" src="Assets/Record.wav"></audio>
+                  <button id="playPauseButton">
+                    <img
+                      id="imageElement"
+                      src="Assets/icon-play-wav.svg"
+                      alt=""
+                    />
+                  </button>
+                </div>
+
+                <div class="descAudio">
+                  <p>Rekaman Skrip Pembelian Produk</p>
+                  <div class="dateTime">
+                    <div class="date">
+                      <img src="Assets/icon-kelender.svg" alt="" />
+                      <p>30 Des 2022</p>
+                    </div>
+                    <div class="bullet"></div>
+                    <div class="time">
+                      <img src="Assets/icon-time.svg" alt="" />
+                      <p>12.00</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="record-audio" id="recordHasilNasabah">
+                <div class="audio">
+                  <audio
+                    id="AudioNasabah"
+                    src="Assets/Record-Calon-Nasabah.wav"
+                  ></audio>
+                  <button id="playPauseRecord">
+                    <img
+                      id="imageElementnasabah"
+                      src="Assets/icon-play-wav.svg"
+                      alt=""
+                    />
+                  </button>
+                </div>
+
+                <div class="descAudio">
+                  <p>Rekaman Persetujaun Pemegang Polis</p>
+
+                  <div class="dateTime">
+                    <div class="date">
+                      <img src="Assets/icon-kelender.svg" alt="" />
+                      <p>30 Des 2022</p>
+                    </div>
+                    <div class="bullet"></div>
+                    <div class="time">
+                      <img src="Assets/icon-time.svg" alt="" />
+                      <p>12.00</p>
+                    </div>
+                  </div>
+
+                  <div class="transkrip">
+                    <p>Terjemahan Teks Dari Sistem :</p>
+                    <p id="resultRecord"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="line-article"></div>
+          <div class="btn-konfirmasi" id="btnKonfirmasi">
+            <button id="btnRekamUlang">Rekam Ulang</button>
+            <button id="btnSimpanRekam">Simpan</button>
+          </div>
+        </article>
+        <!-- END ARTICLE -->
+      </div>
+      <!-- END CONTAINER -->
+    </div>
+
+    <!-- END WRAPPER -->
+  </body>
+
+  <!-- START POP UP RECORD -->
+  <div id="popUpRecord" class="popUpRecord">
+    <div class="popUpRecord-content">
+      <button id="closePopupBtnRecord">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+      <div class="title-popup-record">
+        <h3>Rekaman Calon Pemegang Polis budiman akbar</h3>
+        <p>
+          Apabila anda mengerti dan setuju silahkan menjawab “Ya Saya Mengerti
+          dan Setuju”
+        </p>
+      </div>
+
+      <div class="content-wave-robo">
+        <div class="imgRecorder">
+          <div class="textRemaining">
+            <p>Time Remaining</p>
+            <div id="timer">00:30</div>
+          </div>
+        </div>
+        <div class="img-equalizer">
+          <img src="Assets/equalizer.png" alt="" />
+        </div>
+        <div class="transkrip">
+          <p>Hasil Text Record :</p>
+          <p id="transcript"></p>
+        </div>
+
+        <div class="btn-record">
+          <button id="ulangBtn">
+            <img src="Assets/icon-replay.svg" alt="" />
+            <p>Ulang</p>
+          </button>
+          <button id="recordBtn" class="btn">
+            <img
+              id="imageElementRecord"
+              src="Assets/icon-record-nasabah.svg"
+              alt=""
+            />
+          </button>
+          <button id="selesaiBtn" class="btn">
+            <img src="Assets/icon-selesai.svg" alt="" />
+            <p>Selesai</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-popup-record">
+        <p>
+          Waktu yang diberikan hanya waktu 30 Detik. Ucapkan dengan Jelas agar
+          dapat kami konfirmasi
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- START POP UP RECORD -->
+
+  <!-- START POP UP TIME OUT -->
+  <div id="popUpTimeOut" class="popUpTimeOut">
+    <div class="popup-timeout-content">
+      <button id="closePopupBtn">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+
+      <div class="containerPopUpTimeOut">
+        <img src="Assets/icon-timeout.svg" alt="" />
+        <p class="titlePopup">Ulang Skrip ?</p>
+        <p class="DescPopup">
+          Anda yakin akan mengulang “Skrip Pembelian Produk” ?
+        </p>
+        <div class="btnCloseTimeout">
+          <button id="btnYaTimeOut">Ya</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END POP UP TIME OUT -->
+
+  <!-- START POP UP ULANG RECORD -->
+  <div id="popUpUlangRecord" class="popUpUlangRecord">
+    <div class="popup-ulangrecord-content">
+      <button id="closePopupBtn">
+        <img src="Assets/icon-close-popup.svg" alt="" />
+      </button>
+
+      <div class="containerPopUpUlangRecord">
+        <img src="Assets/icon-tandaTanya.svg" alt="" />
+        <p class="titlePopup">Ulang Record ?</p>
+        <p class="DescPopup">Anda yakin akan mengulang “Record” ?</p>
+        <div class="btnCloseUlangRecord">
+          <button id="btnTidakUlang">Tidak</button>
+          <button id="btnYaUlang">Ya</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END POP UP ULANG RECORD -->
+
+  <!-- JAVSCRIPT -->
+  <script src="Script/approval.js"></script>
+</html>
